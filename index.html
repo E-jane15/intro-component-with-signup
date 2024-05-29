@@ -15,6 +15,7 @@
     <title>Frontend Mentor | Intro component with sign up form</title>
     <link rel="stylesheet" href="./styles.css" />
     <script src="./app.js" defer></script>
+    <script src="https://kit.fontawesome.com/b13754f9d6.js" crossorigin="anonymous"></script>
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
   <body>
@@ -31,22 +32,27 @@
         <h4>Try it free 7 days<span> then $20/mo. thereafter</span></h4>
         <form action="" id="form">
           <label for="firstName">
-            <input type="text" class="firstName" placeholder="First Name" />
+            <input class="input-field" type="text" class="firstName" placeholder="First Name" />
+            <p class="firstnameerror"></p>
           </label>
           <label for="lastName">
-            <input type="text" class="lastName" placeholder="Last Name" />
+            <input class="input-field" type="text" class="lastName" placeholder="Last Name" />
+            <p class="lastnameerror"></p>
           </label>
           <label for="email">
-            <input type="email" class="email" placeholder="Email" />
+            <input class="input-field" type="email" class="email" placeholder="Email" />
+            <p class="emailerror"></p>
           </label>
-          <label for="password">
+          <div class="pass">
+            <label for="password">
             <input type="password" class="password" placeholder="Password" />
-          </label>
+            </label>
+            <i class="fa fa-eye" aria-hidden="true"></i>
+          </div>
+            <p class="passworderror"></p>
+        
           <button id="button">Claim your free trial</button>
-          <small
-            >By clicking the button, you are agreeing to our
-            <span> Terms and Services</span></small
-          >
+          <small>By clicking the button, you are agreeing to our<span> Terms and Services</span></small>
         </form>
       </div>
     </main>

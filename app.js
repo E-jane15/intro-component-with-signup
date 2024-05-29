@@ -17,9 +17,17 @@ form.addEventListener('submit', (e) => {
   const passwordVal = password.value;
   console.log(fName, lName, emailVal, passwordVal);
 
+  const firstNameError = document.querySelector(".firstnameerror");
+  const lastNameError = document.querySelector(".lastnameerror");
+  const emailError = document.querySelector(".emailerror");
+  const passwordError = document.querySelector(".passworderror");
+  
+
   // Check first name
   if (fName === '') {
     firstName.classList.add('error');
+    firstNameError.innerHTML= "First Name cannot be empty";
+
   } else {
     firstName.classList.remove('error');
   }
@@ -27,6 +35,7 @@ form.addEventListener('submit', (e) => {
 
   if (lName === '') {
     lastName.classList.add('error');
+    lastNameError.innerHTML= "Last Name cannot be empty";
   } else {
     lastName.classList.remove('error');
   }
@@ -34,6 +43,7 @@ form.addEventListener('submit', (e) => {
 
   if (!validateEmail(emailVal) || emailVal === '') {
     email.classList.add('error');
+    emailError.innerHTML= "Looks like this is not an email";
   } else {
     email.classList.remove('error');
   }
@@ -42,9 +52,14 @@ form.addEventListener('submit', (e) => {
 
   if (passwordVal === '') {
     password.classList.add('error');
+    passwordError.innerHTML= "Password cannot be empty";
   } else {
     password.classList.remove('error');
   }
+
+  
+
+
 });
 
 //Validate email
