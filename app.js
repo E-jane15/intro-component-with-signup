@@ -4,7 +4,8 @@ const firstName = document.querySelector('.firstName');
 const lastName = document.querySelector('.lastName');
 const email = document.querySelector('.email');
 const password = document.querySelector('.password');
-
+const warning = document.querySelector(".warning");
+const eye = document.querySelector("i");
 console.log(firstName);
 
 // console.log(firstName, lastName, email, password);
@@ -27,7 +28,7 @@ form.addEventListener('submit', (e) => {
   if (fName === '') {
     firstName.classList.add('error');
     firstNameError.innerHTML= "First Name cannot be empty";
-
+    warning.style.display = 'flex';
   } else {
     firstName.classList.remove('error');
   }
@@ -36,6 +37,7 @@ form.addEventListener('submit', (e) => {
   if (lName === '') {
     lastName.classList.add('error');
     lastNameError.innerHTML= "Last Name cannot be empty";
+    warning.style.display = 'flex';
   } else {
     lastName.classList.remove('error');
   }
@@ -44,6 +46,7 @@ form.addEventListener('submit', (e) => {
   if (!validateEmail(emailVal) || emailVal === '') {
     email.classList.add('error');
     emailError.innerHTML= "Looks like this is not an email";
+    warning.style.display = 'block';
   } else {
     email.classList.remove('error');
   }
@@ -53,6 +56,7 @@ form.addEventListener('submit', (e) => {
   if (passwordVal === '') {
     password.classList.add('error');
     passwordError.innerHTML= "Password cannot be empty";
+    eye.style.visibility='visible';
   } else {
     password.classList.remove('error');
   }
